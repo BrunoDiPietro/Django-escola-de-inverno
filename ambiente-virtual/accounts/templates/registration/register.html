@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block title %}Registrar{% endblock %}
+
+{% block content %} 
+<style>
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    #divForm {
+ border: 1px solid black;
+ border-radius: 25px;
+ width: 300px;
+ background-color: #171717;
+ box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+ align-items: center;
+ justify-content: center;
+ gap: 0.5em;
+ border-radius: 25px;
+ padding: 0.6em;
+ border: none;
+ outline: none;
+ color: white;
+ background-color: #171717;
+ margin-bottom: 20px;
+    }
+    
+input {
+  display: flex;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.5em !important;
+  border-radius: 25px !important; 
+  padding: 0.6em !important;
+  border: none !important;
+  outline: none !important;
+  color: white !important;
+  background-color: #171717 !important; 
+  box-shadow: inset 2px 5px 10px rgb(5, 5, 5) !important;
+  background: none !important;
+  border: none !important;
+  outline: none !important;
+  width: 100% !important;
+  color: #d3d3d3 !important;
+}
+
+h4, label, span, p, li {
+    color: rgb(255, 119, 0);
+}
+
+button {
+    color: #0d6efd !important;
+    background: transparent !important;
+    margin-left: 10px!important;
+    border: 1px solid rgb(255, 119, 0)!important ;
+    color: rgb(255, 119, 0) !important;
+}
+
+button:hover {
+    background-color: rgb(255, 119, 0) !important;
+    color: white !important;
+    border-color: rgb(255, 119, 0) !important;
+}
+
+
+
+
+</style>
+
+
+<div id="container">
+    <div class="col-md-4" id="divForm">
+        <h4>Criar uma conta</h4>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn btn-warning mt-3" type="submit">Registrar</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
